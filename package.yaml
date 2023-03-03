@@ -1,0 +1,28 @@
+name: yesod-auth-test
+version: '0.0.0'
+
+dependencies:
+    - base
+    - yesod-core
+    - text
+    - http-conduit
+    - data-default
+    - yesod-auth
+    - yesod
+
+# The library contains all of our application code. The executable
+# defined below is just a thin wrapper.
+library:
+    source-dirs: src
+
+# Runnable executable for our application
+executables:
+    yesod-auth-test:
+        main: Main.hs
+        source-dirs: app
+        ghc-options:
+            - -threaded
+            - -rtsopts
+            - -with-rtsopts=-N
+        dependencies:
+            - yesod-auth-test
